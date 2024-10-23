@@ -13,15 +13,8 @@ import pandas as pd
 conn = st.connection("snowflake")
 
 def get_report_periods_fromDB():
-    periods = pd.read_csv('https://raw.githubusercontent.com/paulledin/data/master/MonthlyReportPeriods.csv')
-    
-    retVal = list()
-    index = 0
-    for x in periods:
-        retVal.insert(index, periods[x])
-        index += 1
-    
-    return (retVal)
+    session = conn.session()
+    return session.table("mytable").to_pandas()
 
 @st.cache_data
 def load_table():
