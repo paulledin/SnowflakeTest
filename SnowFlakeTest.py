@@ -10,7 +10,7 @@ Created on Tue Oct 22 14:01:23 2024
 import streamlit as st
 import pandas as pd
 
-conn = st.connection("pets")
+conn = st.connection("snowflake")
 
 def get_report_periods_fromDB():
     session = conn.session()
