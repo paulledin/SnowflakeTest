@@ -1,6 +1,6 @@
 altair
 pandas
-streamlit==1.31.1
+streamlit
 snowflake-connector-python
 snowflake-snowpark-python
 requests
