@@ -11,7 +11,6 @@ import streamlit as st
 import pandas as pd
 
 conn = st.connection("snowflake")
-conn2 = st.connection("snowflake")
 
 @st.cache_data
 def get_report_periods_fromDB():
