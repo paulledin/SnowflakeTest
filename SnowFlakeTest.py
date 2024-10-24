@@ -17,7 +17,7 @@ def get_report_periods_fromDB():
     session = conn.session()
 
     #retVal = session.table("monthly_report.information_schema.tables").to_pandas()
-    retVal = session.sql("select * from monthly_report.information_schema.tables").to_pandas()
+    retVal = session.sql("SELECT TABLE_NAME, length(TABLE_NAME), substr(TABLE_NAME, 21, 26) FROM monthly_report.information_schema.tables WHERE table_schema = 'BOTH' and TABLE_NAME like 'AFL_TABLE_1_BYSTATE_%' ").to_pandas()
     
     return retVal
 
