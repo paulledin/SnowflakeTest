@@ -16,7 +16,7 @@ conn2 = st.connection("snowflake")
 @st.cache_data
 def get_report_periods_fromDB():
     session = conn.session()
-    return session.table("monthly_reports.either.afl_table_1_bystate_202409").to_pandas()
+    return session.table("monthly_report.either.afl_table_1_bystate_202409").to_pandas()
 
 @st.cache_data
 def load_table():
