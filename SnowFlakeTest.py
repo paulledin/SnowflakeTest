@@ -15,7 +15,10 @@ conn = st.connection("snowflake")
 @st.cache_data
 def get_report_periods_fromDB():
     session = conn.session()
-    return session.table("monthly_report.information_schema.tables").to_pandas()
+
+    retVal = session.table("monthly_report.information_schema.tables").to_pandas()
+    
+    return retVal
 
 #SELECT TABLE_NAME, length(TABLE_NAME), substr(TABLE_NAME, 21, 26) 
 #FROM monthly_report.information_schema.tables 
