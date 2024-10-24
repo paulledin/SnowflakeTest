@@ -16,7 +16,8 @@ conn = st.connection("snowflake")
 def get_report_periods_fromDB():
     session = conn.session()
 
-    retVal = session.table("monthly_report.information_schema.tables").to_pandas()
+    #retVal = session.table("monthly_report.information_schema.tables").to_pandas()
+    retVal = session.sql("select * from monthly_report.information_schema.tables").to_pandas()
     
     return retVal
 
